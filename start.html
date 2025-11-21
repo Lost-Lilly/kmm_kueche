@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KMM Küche – Startseite</title>
+
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000000;
+        }
+        #startBtn {
+        padding: 15px 35px;
+        font-size: 22px;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        background-color: #007bff;
+        color: white;
+        }
+
+        /* Modal */
+        .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 600px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        }
+        .close {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+        h2 {
+        margin-top: 0;
+        }
+        #goBtn {
+        margin-top: 20px;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 8px;
+        background-color: #28a745;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<button id="startBtn">Start</button>
+
+
+<div id="infoModal" class="modal">
+<div class="modal-content">
+<span class="close" id="closeModal">&times;</span>
+    <h2>Erklärung</h2>
+        <p> Herzlich Willkommen! Du bist gerade dabei die KMM Küche zu betreten, um dir deinen Aufenthalt angenehmer zu machen, sind hier ein paar Hinweise für dich:<br><br>
+1. Viele Elemente auf der Website sind klickbar, um mit ihnen zu interagieren, musst du auf diese klicken.<br>
+2. Einmal geklickt, öffnet sich ein Fenster mit den jeweiligen Informationen, rechts oben kannst du dieses schließen.<br>
+3. Nachdem ein Objekt geklickt wurde, bekommt es Farbe.<br>
+4. Hast du alle Objekte gefunden, verwandelt sich die Küche.<br><br>
+Viel Spaß!
+        </p>
+    <button id="goBtn" onclick="window.location.href='seite2.html'">Los geht's!</button>
+</div>
+</div>
+<script>
+    const startBtn = document.getElementById('startBtn');
+    const modal = document.getElementById('infoModal');
+    const closeModal = document.getElementById('closeModal');
+    
+    
+    startBtn.onclick = () => {
+    modal.style.display = 'block';
+    };
+    
+    
+    closeModal.onclick = () => {
+    modal.style.display = 'none';
+    };
+    
+    
+    window.onclick = (event) => {
+    if (event.target === modal) {
+    modal.style.display = 'none';
+    }
+    };
+    </script>
+    </body>
+</html>
 
