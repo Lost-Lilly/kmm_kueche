@@ -16,23 +16,38 @@
     }
         
     body {
-        background-image: url('medien/Raum_dunkel.jpeg');
+        background-image:url('Medien/Raum_dunkel.jpeg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
         font-family: Arial, sans-serif;
     }
+    
         #startBtn {
         position: absolute;
-        padding: 15px 35px;
-        font-size: 22px;
-        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background-image:url(Medien/start.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         border: none;
-        border-radius: 10px;
-        background-color: #007bff;
-        color: white;
-        }
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    #startBtn:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    #startBtn:active {
+        background-image:url(Medien/start1.png);
+        transform: translate(-50%, -50%) scale(0.97);
+    }
 
         /* Modal */
         .modal {
@@ -53,7 +68,17 @@
         width: 80%;
         max-width: 600px;
         box-shadow: 0 0 15px rgba(0,0,0,0.3);
+        opacity: 0;
+        transform: scale(0.95);
+        animation: fadeIn 0.35s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: scale(1);
         }
+    }
         .close {
         float: right;
         font-size: 28px;
@@ -65,20 +90,31 @@
         }
         #goBtn {
         margin-top: 20px;
-        padding: 10px 25px;
+        width: 180px;
+        height: 70px;
+        background-image:url(Medien/los.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
         border: none;
-        border-radius: 8px;
-        background-color: #28a745;
-        color: white;
-        font-size: 18px;
         cursor: pointer;
-        }
+        transition: transform 0.2s ease;
+    }
+
+    #goBtn:hover {
+        transform: scale(1.05);
+    }
+
+    #goBtn:active {
+        background-image: url(Medien/los1.png);
+        transform: scale(0.95);
+    }
     </style>
 </head>
 
 <body>
 
-<button id="startBtn">Start</button>
+<button id="startBtn"></button>
 
 
 <div id="infoModal" class="modal">
@@ -92,7 +128,7 @@
 4. Hast du alle Objekte gefunden, verwandelt sich die Küche.<br><br>
 Viel Spaß!
         </p>
-    <button id="goBtn" onclick="window.location.href='https://lost-lilly.github.io/kmm_kueche_raum/'">Los geht's!</button>
+    <button id="goBtn" onclick="window.location.href='https://lost-lilly.github.io/kmm_kueche_raum/'"></button>
 </div>
 </div>
 <script>
@@ -119,4 +155,3 @@ Viel Spaß!
     </script>
     </body>
 </html>
-
