@@ -7,15 +7,22 @@
 <title>KMM Küche – Startseite</title>
 
     <style>
-        body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+            html, body {
         margin: 0;
-        background-color: #000000;
-        }
+        padding: 0;
+        overflow: hidden; /* kein Scrollen */
+        width: 100vw;
+        height: 100vh;
+    }
+        
+    body {
+        background-image: url('medien/Raum_dunkel');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative; /* Referenz für absolute Hotspots */
+        font-family: Arial, sans-serif;
+    }
         #startBtn {
         padding: 15px 35px;
         font-size: 22px;
